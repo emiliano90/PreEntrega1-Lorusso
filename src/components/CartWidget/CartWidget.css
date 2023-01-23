@@ -1,0 +1,14 @@
+.cart-container{
+    background-color: white;
+    border-radius: 5px;
+    width: 60px;
+    height: 30px;
+}
+
+.cart-image{
+    height: 20px;
+}
+
+.cart-number{
+    margin-left: 5px;
+}
