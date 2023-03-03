@@ -35,7 +35,6 @@ export const CartForm = ({ handleOrden }) => {
 						const itemUpdate = doc(db, 'items', item.id)
 						updateDoc(itemUpdate,
 							{ stock: item.stock - item.cantidad })
-							.then(resp => console.log(resp))
 					});
 				}
 				)

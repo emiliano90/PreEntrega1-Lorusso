@@ -9,11 +9,9 @@ export const ItemListContainer = () => {
 	const [productos, setProductos] = useState([])
 	const [loading, setLoading] = useState(true)
 
-	console.log(idCategoria);
 
 	useEffect(() => {
 
-		console.log('hola111')
 		setLoading(true)
 		setProductos([])
 		const db = getFirestore()
@@ -23,8 +21,6 @@ export const ItemListContainer = () => {
 
 		getDocs(queryFilter)
 			.then(resp => {
-				console.log('hola')
-				console.log(resp.data)
 				setProductos(resp.docs.map(product => ({ id: product.id, ...product.data() })))
 
 			})
@@ -36,7 +32,6 @@ export const ItemListContainer = () => {
 	}, [idCategoria])
 
 
-	console.log(productos)
 	return (
 		<center>
 			{loading ? <Loading /> :

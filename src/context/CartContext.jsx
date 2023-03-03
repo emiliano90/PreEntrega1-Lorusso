@@ -19,7 +19,6 @@ export const CartContextProvider = ({ children }) => {
 		}
 		else
 			setCartList([...cartList, newProducto])
-		console.log(cartList)
 	}
 	//eliminat item por id
 	const eliminarItemCarrito = (id) => {
