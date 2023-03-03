@@ -9,7 +9,7 @@ export const ItemDetailContainer = () => {
 	const [producto, setProducto] = useState({})
 	const [loading, setLoading] = useState(true)
 
-	console.log(idProducto)
+
 	useEffect(() => {
 
 		const db = getFirestore()

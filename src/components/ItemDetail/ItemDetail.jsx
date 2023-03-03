@@ -10,12 +10,11 @@ export const ItemDetail = ({ producto }) => {
 	const { cartList, agregarCarrito } = useCartContext()
 
 	const handleAgregar = (cantidad) => {
-		console.log(cantidad)
 
 		agregarCarrito({ ...producto, cantidad })
 		setProductoAgregado(true)
 	}
-	console.log(cartList)
+
 	return (
 
 		<Card>
