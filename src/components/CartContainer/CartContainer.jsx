@@ -19,7 +19,9 @@ export const CartContainer = () => {
 			totalItemsCarrito() ?
 				(
 				<>
-					<CartList/>
+					<CartList/> 
+					<br/>
+					<br/>
 					<CartForm handleOrden={handleOrden}/>
 				</>	
 				)

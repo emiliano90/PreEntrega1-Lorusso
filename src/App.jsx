@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 
@@ -12,7 +11,6 @@ import './App.css'
 import { CartContextProvider } from './context/CartContext';
 
 function App() {
-	const [count, setCount] = useState(0)
 
 	return (
 
@@ -20,8 +18,8 @@ function App() {
 			<CartContextProvider>
 				<NavBar />
 				<Routes>
-					<Route path='/' element={<ItemListContainer greeting={"Hola!"} />} />
-					<Route path='/category/:idCategoria' element={<ItemListContainer greeting={"ItemListContainer -> Categoria!"} />} />
+					<Route path='/' element={<ItemListContainer />} />
+					<Route path='/category/:idCategoria' element={<ItemListContainer />} />
 					<Route path='/item/:idProducto' element={<ItemDetailContainer />} />
 					<Route path='/cart' element={<CartContainer />} />
 

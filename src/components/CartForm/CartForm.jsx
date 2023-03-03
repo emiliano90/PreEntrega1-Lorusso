@@ -55,11 +55,11 @@ export const CartForm = ({ handleOrden }) => {
 
 	return (
 		<form onSubmit={insertarOrden}>
-			<input required name='name' placeholder='Nombre' onChange={handleChange} value={formData.name} />
-			<input required name='phone' placeholder='Phone' onChange={handleChange} value={formData.phone} />
-			<input required name='mail' type='email' placeholder='Mail' onChange={handleChange} value={formData.mail} />
-			<input required name='repetirMail' type='email' placeholder='Repetir Mail' onChange={handleChange} value={formData.repetirMail} />
-
+			<input required name='name' placeholder='Nombre' onChange={handleChange} value={formData.name} /><br/>
+			<input required name='phone' placeholder='Telefono' onChange={handleChange} value={formData.phone} /><br/>
+			<input required name='mail' type='email' placeholder='Mail' onChange={handleChange} value={formData.mail} /><br/>
+			<input required name='repetirMail' type='email' placeholder='Repetir Mail' onChange={handleChange} value={formData.repetirMail} /><br/>
+			<br/>
 			<Button type='onSubmit'>Generar Orden</Button>
 		</form>
 	)
