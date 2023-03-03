@@ -9,24 +9,28 @@ import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetail
 import { CartContainer } from './components/CartContainer/CartContainer';
 
 import './App.css'
+import { CartContextProvider } from './context/CartContext';
 
 function App() {
-  const [count, setCount] = useState(0)
+	const [count, setCount] = useState(0)
 
-  return (
+	return (
 
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<ItemListContainer greeting={"Hola!"} />} />
-        <Route path='/category/:idCategoria' element={<ItemListContainer greeting={"ItemListContainer -> Categoria!"} />} />
-        <Route path='/item/:idProducto' element={<ItemDetailContainer/>} />
-        <Route path='/cart' element={<CartContainer/>} />
-        
-        <Route path='*' element={<Navigate to='/'/>} />
-      </Routes>
-    </BrowserRouter>
-  )
+		<BrowserRouter>
+			<CartContextProvider>
+				<NavBar />
+				<Routes>
+					<Route path='/' element={<ItemListContainer greeting={"Hola!"} />} />
+					<Route path='/category/:idCategoria' element={<ItemListContainer greeting={"ItemListContainer -> Categoria!"} />} />
+					<Route path='/item/:idProducto' element={<ItemDetailContainer />} />
+					<Route path='/cart' element={<CartContainer />} />
+
+					<Route path='*' element={<Navigate to='/' />} />
+				</Routes>
+			</CartContextProvider>
+		</BrowserRouter>
+
+	)
 }
 
 export default App

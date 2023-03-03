@@ -1,19 +1,19 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
+import { Container, Nav, Navbar } from 'react-bootstrap'
 
 import { CartWidget } from '../CartWidget/CartWidget'
 
 export default function NavBar() {
+
+	const categorias = [{ id: 1, name: "Sillones", link: "/category/Sillones" },
+	{ id: 2, name: "Camas", link: "/category/Camas" }]
 	return (
 		<Navbar bg="dark" variant="dark">
 			<Container>
-				{/*<Navbar.Brand href="#home">Capri</Navbar.Brand>*/}
 				<Link to='/' className='mx-2'>Capri</Link>
 				<Nav className="me-auto">
-					<NavLink to="/category/Sillones" className={({ isActive }) => isActive ? 'fw-bold mx-2' : 'mx-2'}>Sillones</NavLink>
-					<NavLink to="/category/Camas" className={({ isActive }) => isActive ? 'fw-bold mx-2' : 'mx-2'}>Camas</NavLink>
-					
+					{categorias.map(categoria => <NavLink key={categoria.id} to={categoria.link} className={({ isActive }) => isActive ? 'fw-bold mx-2' : 'mx-2'}>{categoria.name}</NavLink>)}
 
 				</Nav>
 				<Nav>
